@@ -1,0 +1,34 @@
+
+========================================
+   HEAT EXCHANGER PARAMETRIC STUDY
+========================================
+Variable: L_tube
+Range: 1.0000 to 2.0000
+Number of points: 5
+
+Running calculations...
+  Point 1/5: L_tube = 1.0000 - Converged
+  Point 2/5: L_tube = 1.2500 - Converged
+  Point 3/5: L_tube = 1.5000 - Converged
+  Point 4/5: L_tube = 1.7500 - Converged
+  Point 5/5: L_tube = 2.0000 - Converged
+
+========================================
+             RESULTS TABLE
+========================================
+
+    L_tube    U_W_m2K    Area_m2    N_tubes    DP_tube_kPa    DP_shell_kPa    D_shell_m    Converged
+    ______    _______    _______    _______    ___________    ____________    _________    _________
+
+        1     91.025     16.686       61         1.0093          77.635        0.32192         1    
+     1.25     89.565     16.954       49         1.6809          139.53        0.29398         1    
+      1.5     87.206      17.42       42         2.4989          219.08        0.27488         1    
+     1.75     84.639      17.94       37          3.467          316.54        0.26056         1    
+        2     82.042      18.51       34         4.5695          430.49        0.24948         1    
+
+Generating plots...
+
+Parametric study complete!
+Results are stored in variable "resultsTable"
+========================================
+

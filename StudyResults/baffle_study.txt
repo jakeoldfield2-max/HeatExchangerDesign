@@ -1,0 +1,36 @@
+
+========================================
+   HEAT EXCHANGER PARAMETRIC STUDY
+========================================
+Variable: baffle_spacing_ratio
+Range: 0.3000 to 0.8000
+Number of points: 6
+
+Running calculations...
+  Point 1/6: baffle_spacing_ratio = 0.3000 - Converged
+  Point 2/6: baffle_spacing_ratio = 0.4000 - Converged
+  Point 3/6: baffle_spacing_ratio = 0.5000 - Converged
+  Point 4/6: baffle_spacing_ratio = 0.6000 - Converged
+  Point 5/6: baffle_spacing_ratio = 0.7000 - Converged
+  Point 6/6: baffle_spacing_ratio = 0.8000 - Converged
+
+========================================
+             RESULTS TABLE
+========================================
+
+    baffle_spacing_ratio    U_W_m2K    Area_m2    N_tubes    DP_tube_kPa    DP_shell_kPa    D_shell_m    Converged
+    ____________________    _______    _______    _______    ___________    ____________    _________    _________
+
+            0.3             72.427      20.94       49         1.4966            1067        0.31087         1    
+            0.4             72.427      20.94       49         1.4966          450.14        0.31087         1    
+            0.5             72.427      20.94       49         1.4966          230.47        0.31087         1    
+            0.6             72.427      20.94       49         1.4966          133.38        0.31087         1    
+            0.7             72.427      20.94       49         1.4966          83.991        0.31087         1    
+            0.8             72.427      20.94       49         1.4966          56.268        0.31087         1    
+
+Generating plots...
+
+Parametric study complete!
+Results are stored in variable "resultsTable"
+========================================
+

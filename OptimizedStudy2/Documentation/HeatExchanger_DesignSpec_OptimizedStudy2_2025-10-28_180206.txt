@@ -1,0 +1,122 @@
+================================================================================
+              HEAT EXCHANGER DESIGN SPECIFICATION DOCUMENT
+                      OPTIMIZED FOR LOW PRESSURE DROP
+================================================================================
+Generated: 28-Oct-2025 18:02:06
+Design Type: Shell-and-Tube Heat Exchanger with Helical Fins
+Application: Air-to-Water Heat Exchange
+Constraint: Shell-Side Pressure Drop < 1 kPa
+Convergence: SUCCESS (6 iterations)
+================================================================================
+
+################################################################################
+#                         KEY PERFORMANCE METRICS                              #
+################################################################################
+
+--- THERMAL PERFORMANCE ---
+  Overall Heat Transfer Coefficient (U):  56.52 W/m²K
+  Total Heat Transfer Area:                27.4 m²
+  Heat Duty:                               10.00 kW
+  Log Mean Temperature Difference (LMTD):  6.72 K
+  Effectiveness (ε):                       0.664
+
+--- PHYSICAL SIZE ---
+  Number of Tubes:                         89
+  Tube Length:                             2.5 m
+  Shell Diameter:                          0.443 m (443 mm)
+  Baffle Spacing:                          0.665 m (665 mm)
+  Number of Baffles:                       2
+  Overall Length:                          ~2.8 m
+
+--- HYDRAULIC PERFORMANCE ---
+  Tube-Side Pressure Drop:                 0.48 kPa ✓
+  Shell-Side Pressure Drop:                0.970 kPa ✓✓✓
+  Tube-Side Reynolds Number:               3012 (Transitional)
+  Shell-Side Reynolds Number:              4755 (Transitional)
+
+--- TEMPERATURES ---
+  Hot Fluid Inlet:                         293.15 K (20.00 °C)
+  Hot Fluid Outlet:                        285.18 K (12.03 °C)
+  Hot Fluid Temperature Drop:              7.97 K
+  Cold Fluid Inlet:                        281.15 K (8.00 °C)
+  Cold Fluid Outlet:                       282.74 K (9.59 °C)
+  Cold Fluid Temperature Rise:             1.59 K
+
+
+################################################################################
+#                       DETAILED DESIGN PARAMETERS                             #
+################################################################################
+
+========================================
+OPERATING CONDITIONS
+========================================
+
+Heat Duty (Q):                    10.00 kW
+Hot Side Mass Flow (m_hot):       1.246 kg/s
+Cold Side Mass Flow (m_cold):     1.500 kg/s
+LMTD Correction Factor (F):       0.96
+
+========================================
+TUBE GEOMETRY (EU METRIC STANDARD)
+========================================
+
+Tube Length (L_tube):             2.5 m *** LONGER for lower velocity ***
+Tube Inner Diameter (D_internal): 0.022 m (22.0 mm)
+Tube Outer Diameter (D_external): 0.025 m (25.0 mm)
+Wall Thickness:                   0.0015 m (1.50 mm)
+Tube Material Conductivity:       50.0 W/mK (Steel)
+
+========================================
+FIN PARAMETERS (LOW BLOCKAGE DESIGN)
+========================================
+
+Fin Height (l_f):                 3.0 mm *** SHORTER to reduce blockage ***
+Fin Thickness (t_f):              1.00 mm
+Fin Pitch (p_f):                  12.0 mm *** LARGER for better airflow ***
+  → Fins per meter:               83 fins/meter
+  → Total fins per tube:          208
+Fin Material Conductivity:        205.0 W/mK (Aluminum)
+
+========================================
+LAYOUT & CONFIGURATION
+========================================
+
+Number of Tube Passes (N_p):      4
+  → Tubes per pass:               22.0
+  → Total flow path length:       10.0 m
+Tube Pitch (L_tp):                37.5 mm *** LARGER for more space ***
+  → Pitch/Diameter ratio:         1.50 **Despite TEMA minimum of 1.25, 1.5 was chosen to use cheaper fan** https://www.thermopedia.com/content/1121/
+Tube Arrangement:                 Triangular (30°)
+Baffle Spacing Ratio:             1.50 *** MAXIMUM for fewer baffles ***
+  → Actual baffle spacing:        0.665 m (665 mm)
+  → Number of baffles:            2
+
+################################################################################
+#                            DESIGN NOTES                                      #
+################################################################################
+
+1. PRESSURE DROP ASSESSMENT:
+   Tube-side ΔP (0.48 kPa): EXCELLENT ✓
+   Shell-side ΔP (0.970 kPa): EXCELLENT - MEETS < 1 kPa CONSTRAINT ✓✓✓
+
+2. KEY DESIGN CHANGES FOR LOW PRESSURE DROP:
+   - Tube length increased to 2.5 m (reduces shell-side velocity)
+   - Fin pitch increased to 12 mm (better airflow between fins)
+   - Fin height reduced to 3 mm (less flow obstruction)
+   - Tube pitch increased to 37.5 mm (more space between tubes)
+   - Baffle spacing maximized (1.50 ratio, only 2 baffles)
+
+3. TRADE-OFFS:
+   - U coefficient is lower (56.5 vs 88 W/m²K) due to reduced heat transfer enhancement
+   - Area requirement increased (27.4 vs 17.6 m²) to compensate
+   - More tubes needed (89 vs 65) and longer exchanger (2.5 vs 1.0 m)
+   - BUT: Shell-side ΔP reduced by 50× (50 kPa → 0.970 kPa) ✓✓✓
+
+4. COMPACTNESS:
+   Volume: 0.386 m³
+   Area density: 70.9 m²/m³
+   Power density: 25.9 kW/m³
+
+================================================================================
+                         END OF DESIGN SPECIFICATION
+================================================================================

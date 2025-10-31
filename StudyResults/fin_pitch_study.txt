@@ -1,0 +1,38 @@
+
+========================================
+   HEAT EXCHANGER PARAMETRIC STUDY
+========================================
+Variable: p_f
+Range: 0.0030 to 0.0060
+Number of points: 7
+
+Running calculations...
+  Point 1/7: p_f = 0.0030 - Converged
+  Point 2/7: p_f = 0.0035 - Converged
+  Point 3/7: p_f = 0.0040 - Converged
+  Point 4/7: p_f = 0.0045 - Converged
+  Point 5/7: p_f = 0.0050 - Converged
+  Point 6/7: p_f = 0.0055 - Converged
+  Point 7/7: p_f = 0.0060 - Converged
+
+========================================
+             RESULTS TABLE
+========================================
+
+     p_f      U_W_m2K    Area_m2    N_tubes    DP_tube_kPa    DP_shell_kPa    D_shell_m    Converged
+    ______    _______    _______    _______    ___________    ____________    _________    _________
+
+     0.003    72.427      20.94       49          1.4966         83.991        0.31087         1    
+    0.0035    76.491     19.825       52          1.3217         74.682        0.32013         1    
+     0.004    79.952      18.97       56          1.1872         67.438         0.3284         1    
+    0.0045    82.925     18.311       59          1.0784         61.522        0.33603         1    
+     0.005    85.611     17.746       61         0.99339         56.864        0.34271         1    
+    0.0055    88.106     17.236       63          0.9271         53.209        0.34844         1    
+     0.006    90.362     16.808       66         0.87076         50.086        0.35375         1    
+
+Generating plots...
+
+Parametric study complete!
+Results are stored in variable "resultsTable"
+========================================
+

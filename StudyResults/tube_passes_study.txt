@@ -1,0 +1,32 @@
+
+========================================
+   HEAT EXCHANGER PARAMETRIC STUDY
+========================================
+Variable: N_p
+Range: 2.0000 to 8.0000
+Number of points: 4
+
+Running calculations...
+  Point 1/4: N_p = 2.0000 - Converged
+  Point 2/4: N_p = 4.0000 - Converged
+  Point 3/4: N_p = 6.0000 - Converged
+  Point 4/4: N_p = 8.0000 - Converged
+
+========================================
+             RESULTS TABLE
+========================================
+
+    N_p    U_W_m2K    Area_m2    N_tubes    DP_tube_kPa    DP_shell_kPa    D_shell_m    Converged
+    ___    _______    _______    _______    ___________    ____________    _________    _________
+
+     2     60.644     24.999       86        0.075483         30.845        0.39933         1    
+     4     85.611     17.746       61         0.99339         56.864        0.34271         1    
+     6     96.617      15.72       54          3.9518         70.407        0.32488         1    
+     8     102.88     14.763       51          10.144         78.598        0.31607         1    
+
+Generating plots...
+
+Parametric study complete!
+Results are stored in variable "resultsTable"
+========================================
+

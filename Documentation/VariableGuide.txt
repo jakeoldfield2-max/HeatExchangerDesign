@@ -1,0 +1,262 @@
+================================================================================
+        HEAT EXCHANGER PARAMETRIC STUDY - COMPREHENSIVE VARIABLE GUIDE
+================================================================================
+
+This document lists ALL variables available for parametric study in the
+heat exchanger optimization script.
+
+HOW TO USE:
+1. Open ParametricStudy.m
+2. Set variableToVary = 'variable_name'; (use exact name from this list)
+3. Set minValue, maxValue, and numPoints
+4. Run the script
+
+================================================================================
+                        OPERATING CONDITIONS / SPECIFICATIONS
+================================================================================
+
+Q               Heat duty (W)
+                Typical range: 5000 - 50000
+                Default: 10000
+
+m_hot           Hot fluid (air) mass flow rate (kg/s)
+                Typical range: 0.5 - 3.0
+                Default: 1.246
+
+m_cold          Cold fluid (water) mass flow rate (kg/s)
+                Typical range: 0.5 - 3.0
+                Default: 1.5
+
+T_hot1          Hot fluid inlet temperature (K)
+                Typical range: 280 - 350
+                Default: 293
+
+T_cold1         Cold fluid inlet temperature (K)
+                Typical range: 275 - 290
+                Default: 281
+
+F               LMTD correction factor (dimensionless)
+                Typical range: 0.7 - 1.0
+                Default: 0.98
+
+================================================================================
+                            TUBE GEOMETRY
+================================================================================
+
+L_tube          Tube length (m)
+                Typical range: 0.5 - 3.0
+                Default: 1.5
+                Note: Affects both area and pressure drop
+
+D_internal      Tube inner diameter (m)
+                Typical range: 0.010 - 0.030
+                Default: 0.02
+                Note: Critical for tube-side velocity and pressure drop
+
+D_external      Tube outer diameter (m)
+                Typical range: 0.015 - 0.035
+                Default: 0.025
+                Note: Must be larger than D_internal
+
+k_tube          Tube wall thermal conductivity (W/mK)
+                Typical range: 15 - 400 (depends on material)
+                Default: 50 (steel)
+                Common values: Copper=400, Aluminum=205, Steel=50
+
+================================================================================
+                              FIN PARAMETERS
+================================================================================
+
+l_f             Fin height/length (m)
+                Typical range: 0.003 - 0.015
+                Default: 0.005
+                Note: Taller fins increase area but may reduce efficiency
+
+t_f             Fin thickness (m)
+                Typical range: 0.0005 - 0.002
+                Default: 0.001
+                Note: Thicker fins improve efficiency but reduce fin density
+
+p_f             Fin pitch/spacing (m)
+                Typical range: 0.002 - 0.008
+                Default: 0.003
+                Note: Smaller pitch = more fins but higher pressure drop
+
+k_fin           Fin thermal conductivity (W/mK)
+                Typical range: 50 - 400 (depends on material)
+                Default: 205 (aluminum)
+                Common values: Copper=400, Aluminum=205, Steel=50
+
+================================================================================
+                         LAYOUT & CONFIGURATION
+================================================================================
+
+N_p             Number of tube passes
+                Typical range: 1 - 8 (integer values)
+                Default: 6
+                Note: More passes increase velocity (better h, worse DP)
+
+L_tp            Tube pitch (center-to-center spacing) (m)
+                Typical range: 1.2*D_external - 2.0*D_external
+                Default: 1.25*D_external
+                Note: Affects bundle compactness
+
+psi_n           Layout parameter (dimensionless)
+                Typical range: 0.15 - 0.25
+                Default: 0.17
+                Note: Depends on tube arrangement pattern
+
+C_1             Layout constant (dimensionless)
+                Typical values: 0.866 (triangular), 1.0 (square)
+                Default: 0.866 (triangular 30deg)
+                Note: Don't vary unless changing tube arrangement
+
+L_bb            Baffle bypass clearance (m)
+                Typical range: 0.005 - 0.020
+                Default: 0.0127
+                Note: Clearance between bundle and shell
+
+baffle_spacing_ratio    Baffle spacing as fraction of shell diameter
+                        Typical range: 0.2 - 0.8
+                        Default: 0.4
+                        Note: Smaller spacing = more baffles = higher DP
+                        **** NEW PARAMETER - USE THIS TO VARY BAFFLE SPACING ****
+
+================================================================================
+                             FOULING RESISTANCES
+================================================================================
+
+Rf_i            Tube-side (water) fouling resistance (m²K/W)
+                Typical range: 0.0001 - 0.001
+                Default: 0.00018
+                Note: Increases over time in service
+
+Rf_o            Shell-side (air) fouling resistance (m²K/W)
+                Typical range: 0.0001 - 0.001
+                Default: 0.0003526
+                Note: Usually lower for air than for water
+
+================================================================================
+                      TUBE-SIDE FLUID PROPERTIES (Water)
+================================================================================
+
+rho_t           Density (kg/m³)
+                Typical range: 995 - 1000 (water at 0-40°C)
+                Default: 999.7
+
+mu_t            Dynamic viscosity (Pa·s)
+                Typical range: 0.0005 - 0.002 (water at 0-40°C)
+                Default: 1.308e-3
+
+k_t             Thermal conductivity (W/mK)
+                Typical range: 0.55 - 0.65 (water at 0-40°C)
+                Default: 0.58
+
+Cp_t            Specific heat capacity (J/kgK)
+                Typical range: 4100 - 4220 (water at 0-40°C)
+                Default: 4200
+
+================================================================================
+                      SHELL-SIDE FLUID PROPERTIES (Air)
+================================================================================
+
+rho_s           Density (kg/m³)
+                Typical range: 1.1 - 1.3 (air at 0-40°C, 1 atm)
+                Default: 1.204
+
+mu_s            Dynamic viscosity (Pa·s)
+                Typical range: 1.7e-5 - 1.9e-5 (air at 0-40°C)
+                Default: 1.825e-5
+
+k_s             Thermal conductivity (W/mK)
+                Typical range: 0.024 - 0.027 (air at 0-40°C)
+                Default: 0.02514
+
+Cp_s            Specific heat capacity (J/kgK)
+                Typical range: 1005 - 1010 (air at 0-40°C)
+                Default: 1007
+
+================================================================================
+                        CALCULATION PARAMETERS
+================================================================================
+
+U_initial_guess Initial guess for overall heat transfer coefficient (W/m²K)
+                Typical range: 50 - 150
+                Default: 80
+                Note: Only affects convergence speed, not final result
+
+tolerance       Convergence tolerance for U iteration (W/m²K)
+                Typical range: 0.01 - 1.0
+                Default: 0.1
+                Note: Smaller values = more accurate but slower
+
+j_f             Shell-side friction factor (dimensionless)
+                Typical range: 0.02 - 0.08 (from Kern chart)
+                Default: 0.04
+                Note: Should be looked up from chart based on Re and baffle cut
+
+================================================================================
+                        RECOMMENDED PARAMETRIC STUDIES
+================================================================================
+
+1. OPTIMIZE TUBE SIZE:
+   Variable: D_internal
+   Range: 0.015 to 0.025 m
+   Goal: Balance heat transfer vs. pressure drop
+
+2. OPTIMIZE FIN GEOMETRY:
+   Variable: l_f (fin height)
+   Range: 0.003 to 0.010 m
+   Goal: Maximize area while maintaining efficiency
+
+3. OPTIMIZE FIN DENSITY:
+   Variable: p_f (fin pitch)
+   Range: 0.002 to 0.006 m
+   Goal: Balance area vs. pressure drop
+
+4. OPTIMIZE BAFFLE SPACING:
+   Variable: baffle_spacing_ratio
+   Range: 0.2 to 0.8
+   Goal: Balance shell-side heat transfer vs. pressure drop
+
+5. OPTIMIZE TUBE PASSES:
+   Variable: N_p
+   Range: 2 to 8 (integers)
+   Goal: Balance tube-side heat transfer vs. pressure drop
+
+6. OPTIMIZE TUBE LENGTH:
+   Variable: L_tube
+   Range: 0.8 to 2.5 m
+   Goal: Balance compactness vs. performance
+
+7. STUDY FLOW RATE EFFECTS:
+   Variable: m_cold or m_hot
+   Range: 0.8 to 2.5 kg/s
+   Goal: Understand sensitivity to flow variations
+
+================================================================================
+                              TIPS FOR USE
+================================================================================
+
+1. Always check that the design converged (Converged column = 1)
+
+2. Watch for unrealistic combinations:
+   - D_internal must be < D_external
+   - Very small fin pitch with thick fins may overlap
+   - Very high velocities may cause erosion
+
+3. Common optimization objectives:
+   - Minimize total area (smaller, cheaper)
+   - Minimize pressure drops (lower pumping costs)
+   - Maximize U (better performance)
+   - Balance multiple objectives
+
+4. You can modify default values in ParametricStudy.m to study
+   interactions between variables
+
+5. Save your resultsTable for each study:
+   save('study_D_internal.mat', 'resultsTable');
+
+================================================================================
+                           END OF VARIABLE GUIDE
+================================================================================

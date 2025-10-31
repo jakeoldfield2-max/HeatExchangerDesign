@@ -1,0 +1,32 @@
+
+========================================
+   HEAT EXCHANGER PARAMETRIC STUDY
+========================================
+Variable: D_internal
+Range: 0.0190 to 0.0220
+Number of points: 4
+
+Running calculations...
+  Point 1/4: D_internal = 0.0190 - Converged
+  Point 2/4: D_internal = 0.0200 - Converged
+  Point 3/4: D_internal = 0.0210 - Converged
+  Point 4/4: D_internal = 0.0220 - Converged
+
+========================================
+             RESULTS TABLE
+========================================
+
+    D_internal    U_W_m2K    Area_m2    N_tubes    DP_tube_kPa    DP_shell_kPa    D_shell_m    Converged
+    __________    _______    _______    _______    ___________    ____________    _________    _________
+
+      0.019       85.611     17.746       61         0.99339         56.864        0.34271         1    
+       0.02       84.735     17.927       62         0.77813          55.85        0.34425         1    
+      0.021       83.813     18.122       62         0.61575         54.793         0.3459         1    
+      0.022       82.853     18.329       63         0.49178         53.703        0.34764         1    
+
+Generating plots...
+
+Parametric study complete!
+Results are stored in variable "resultsTable"
+========================================
+
